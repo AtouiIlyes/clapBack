@@ -27,6 +27,7 @@ gem 'devise'  # user mamangement
 gem 'devise-jwt' # JWT policy management
 # https://stackoverflow.com/questions/51264240/rake-dbmigrate-error-with-mysql2-gem-library-not-loaded-libssl-1-0-0-dylib/51269245
 gem 'mysql2' # gem install mysql2 -- --with-cppflags=-I/usr/local/opt/openssl/include --with-ldflags=-L/usr/local/opt/openssl/lib
+gem 'active_model_serializers', '~> 0.10.0'
 
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
@@ -45,6 +46,9 @@ group :development do
   gem 'rspec-rails'
 end
 
+group :test do
+  gem 'database_cleaner'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
