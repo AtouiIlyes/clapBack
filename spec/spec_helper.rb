@@ -16,14 +16,8 @@ require 'rails_helper'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-DatabaseCleaner.strategy = :truncation
-
 
 RSpec.configure do |config|
-
-
-  config.include ApiHelper, type: :api
-  config.include Requests::JsonHelpers, type: :api
 
   config.include Devise::Test::ControllerHelpers, :type => :controller
 
