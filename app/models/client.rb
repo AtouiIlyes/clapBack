@@ -10,4 +10,7 @@ class Client < ApplicationRecord
   validates :country, presence: true
   validates :phone, presence: true
   validates :activity, presence: true
+
+  has_many :contracts
+  
 end
