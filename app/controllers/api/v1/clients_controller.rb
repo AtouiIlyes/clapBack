@@ -1,43 +1,33 @@
 module Api
   module V1
-
     class ClientsController < ApplicationController
 
-      # def index
-      #   @clients = Client.all
-
-      #   logger.debug(@clients)
-
-      #   render json: @clients, status: 200
-      # end
-
+      before_action :set_client, only: [:show, :update, :destroy]
 
       def index
+        @clients = Client.all
+        #render json: @clients, status: :ok, location: api_v1_clients_url
+        json_response(@clients, api_v1_clients_url)
+      end
 
-        logger.debug('bite')
-        logger.debug('bite')
-        logger.debug('bite')
-        @todos = Client.all
-        json_response(@todos)
+      def show
+        json_response(@client, api_v1_client_url(@client))
       end
 
       def create
-
-        logger.debug('bite')
-        logger.debug('bite')
-        logger.debug('bite')
-
-        @client = Client.new(client_params)
-
-        if @client.save
-          render json: @client, status: :created, location: api_v1_client_url(@client)
-        else
-          render json: @client.errors, status: :unprocessable_entity
-        end
+        @client = Client.create!(client_params)
+        json_response(@client, api_v1_client_url(@client), :created)
       end
 
-      def index
-        
+
+      def update
+        @client.update(client_params)
+        json_response(@client, api_v1_client_url(@client))
+      end
+
+      def destroy
+        @client.destroy
+        head :no_content
       end
 
 
@@ -45,6 +35,12 @@ module Api
 
       def client_params
         params.require(:client).permit(:name, :siret, :address, :zip_code, :city, :country, :phone, :fax, :activity, :activity_code, :vat_number)
+      end
+
+      def set_client
+        # 404 managed by concern exeption handler
+
+        @client = Client.find(params[:id])
       end
 
     end

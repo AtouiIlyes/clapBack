@@ -8,15 +8,5 @@ FactoryBot.define do
     country { Faker::Address.country }
     phone { Faker::PhoneNumber.phone_number }
     activity {  Faker::Company.industry }
-
-    # name "odevie"
-    # siret "9273019870000"
-    # address "chemin du moulin brûlé"
-    # zip_code "13150"
-    # city  "arles"
-    # country "France"
-    # phone "0090987634"
-    # activity "bite"
-
   end
 end
