@@ -7,5 +7,5 @@ class Contract < ApplicationRecord
 
 
   validates :name, presence: true
-
+  validates :client, presence: true
 end

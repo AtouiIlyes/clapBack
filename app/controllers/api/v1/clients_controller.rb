@@ -39,7 +39,6 @@ module Api
 
       def set_client
         # 404 managed by concern exeption handler
-
         @client = Client.find(params[:id])
       end
 
