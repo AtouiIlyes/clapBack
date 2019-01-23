@@ -2,7 +2,7 @@ module Api
   module V1
     class ClientsController < ApplicationController
 
-      #before_action :authenticate_user!
+      before_action :authenticate_user!
       before_action :set_client, only: [:show, :update, :destroy]
 
       def index

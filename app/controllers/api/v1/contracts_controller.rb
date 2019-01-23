@@ -1,7 +1,9 @@
 module Api
   module V1
     class ContractsController < ApplicationController
-      before_action :set_client #:authenticate_user!
+      
+      before_action :authenticate_user!
+      before_action :set_client 
       before_action :set_contract, only: [:show, :update, :destroy]
 
       # GET /contracts

@@ -2,6 +2,8 @@ module Api
   module V1
     class UsersController < ApplicationController
 
+      before_action :authenticate_user!
+
       def index
         @user = User.all.as_json(include: :role)
         json_response(@user, api_v1_users_url)
