@@ -136,7 +136,7 @@ RSpec.describe 'Contract API', type: :request do
       it 'changes the name of the contract' do
         updated_contract = Contract.find(id)
         expect(updated_contract.name).to eq('nom')
-        #expect(json_response['name']).to match(/nom/)
+        expect(json_response[0]['name']).to eq('nom')
       end
     end
 

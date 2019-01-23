@@ -20,6 +20,7 @@ Rails.application.routes.draw do
         resources :contracts
       end
 
+      resources :users
     end
   end
 

@@ -2,10 +2,12 @@ module Api
   module V1
     class ClientsController < ApplicationController
 
+      #before_action :authenticate_user!
       before_action :set_client, only: [:show, :update, :destroy]
 
       def index
-        @clients = Client.all
+        @clients = Client.all.as_json(include: :contracts)
+        #@clients = @clients.as_json(include: :contracts)
         #render json: @clients, status: :ok, location: api_v1_clients_url
         json_response(@clients, api_v1_clients_url)
       end
