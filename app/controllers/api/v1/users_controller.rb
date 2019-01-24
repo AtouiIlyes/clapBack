@@ -11,7 +11,7 @@ module Api
       end
 
       def create
-        @user = Role.create!(sign_up_params)
+        @user = User.create!(sign_up_params)
         json_response(@user.as_json(include: :role), api_v1_users_url(@user), :created)
       end
 
