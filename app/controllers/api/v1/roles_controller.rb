@@ -10,7 +10,7 @@ module Api
       end
 
       def show
-        json_response(@role, api_v1_role_url(@role))
+        json_response(@role.as_json(include: :permissions), api_v1_role_url(@role))
       end
 
       def create
