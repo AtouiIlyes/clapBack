@@ -44,7 +44,7 @@ module Api
           :role_id, 
           :first_name, 
           :last_name, 
-          :type, 
+          :type_id, 
           :function, 
           :address_one, 
           :address_two, 

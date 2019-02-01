@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       end
 
       resources :users
+      resources :user_types
       resources :roles
       resources :permissions, only: [:index]
     end
