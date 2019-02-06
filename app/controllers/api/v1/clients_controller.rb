@@ -13,6 +13,7 @@ module Api
       end
 
       def show
+        @client = @client.as_json(include: :contracts)
         json_response(@client, api_v1_client_url(@client))
       end
 
