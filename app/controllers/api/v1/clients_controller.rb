@@ -34,6 +34,19 @@ module Api
       end
 
 
+
+
+      def contacts
+        @billing = User.joins(:user_type).where('user_types.name' => 'facturation')
+        @operational  = User.joins(:user_type).where('user_types.name' => 'operationnel')
+
+        json_response({
+          :billing => @billing,
+          :operational  => @operational 
+        }, api_v1_clients_contacts_url)
+      end
+
+
       private
 
       def client_params

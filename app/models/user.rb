@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :managed_contracts, class_name: 'Contract', foreign_key: 'manager_id'
 
   belongs_to :role, optional: true
-  belongs_to :user_type, optional: true
+  belongs_to :user_type, optional: true, foreign_key: :type_id
 end
