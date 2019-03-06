@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_31_150910) do
+ActiveRecord::Schema.define(version: 2019_03_06_110355) do
 
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 2019_01_31_150910) do
     t.string "vat_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "type_id"
+    t.integer "role_id"
+    t.string "function"
+    t.string "address_one"
+    t.string "address_two"
+    t.string "phone"
+    t.string "fax"
+    t.string "country"
+    t.string "city"
+    t.integer "zip_code"
   end
 
   create_table "contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,6 +78,10 @@ ActiveRecord::Schema.define(version: 2019_01_31_150910) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "untitled_table_10", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.index ["id"], name: "id", unique: true
   end
 
   create_table "user_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

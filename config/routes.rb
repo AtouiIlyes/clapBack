@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :users
       resources :user_types
       resources :roles
+      resources :contacts
       resources :permissions, only: [:index]
     end
   end
