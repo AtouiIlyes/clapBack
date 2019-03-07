@@ -82,6 +82,17 @@ ActiveRecord::Schema.define(version: 2019_03_06_110355) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "stepType"
+    t.string "name"
+    t.string "description"
+    t.string "sended"
+    t.integer "days_number"
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "untitled_table_10", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.index ["id"], name: "id", unique: true
   end
