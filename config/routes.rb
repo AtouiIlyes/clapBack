@@ -22,11 +22,13 @@ Rails.application.routes.draw do
       resources :clients do
         resources :contracts
       end
-
+      resources :contracts
       resources :users
       resources :user_types
       resources :roles
       resources :contacts
+      resources :proceedings
+      resources :steps
       resources :permissions, only: [:index]
     end
   end
