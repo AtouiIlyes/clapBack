@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2019_03_06_110355) do
     t.string "country"
     t.string "city"
     t.integer "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

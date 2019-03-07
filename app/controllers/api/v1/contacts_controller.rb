@@ -5,8 +5,8 @@ module Api
         before_action :set_contact, only: [:show, :update, :destroy]
 
         def index
-          @contact = Contact.all.as_json(include: :role )
-          json_response(@contact, api_v1_contacts_url)
+          @contacts = Contact.all.as_json(:include => [:role, :user_type])
+          json_response(@contacts, api_v1_contacts_url)
         end
 
         def create
@@ -15,12 +15,12 @@ module Api
         end
 
         def show
-          json_response(@contact.as_json(include: :role), api_v1_contacts_url(@contact))
+          json_response(@contact.as_json(:include => [:role, :user_type]), api_v1_contacts_url(@contact))
         end
 
         def update
           @contact.update(contacts_params)
-          json_response(@contact.as_json(include: :role), api_v1_contacts_url(@contact))
+          json_response(@contact.as_json(:include => [:role, :user_type]), api_v1_contacts_url(@contact))
         end
 
         def destroy

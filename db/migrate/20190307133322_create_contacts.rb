@@ -13,7 +13,8 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.string :fax
       t.string :country 
       t.string :city 
-      t.integer :zip_code    
-    end
+      t.integer :zip_code
+      t.timestamps
+    end   
   end
 end
