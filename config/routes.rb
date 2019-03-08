@@ -27,8 +27,9 @@ Rails.application.routes.draw do
       resources :user_types
       resources :roles
       resources :contacts
-      resources :proceedings
-      resources :steps
+      resources :proceedings do
+        resources :steps
+      end
       resources :permissions, only: [:index]
     end
   end

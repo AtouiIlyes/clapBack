@@ -1,6 +1,5 @@
 class Step < ApplicationRecord
-  has_and_belongs_to_many :proceedings
-  accepts_nested_attributes_for :proceedings
+  belongs_to :proceeding
 
   validates :stepType, presence: true
   validates :name, presence: true
@@ -8,4 +7,6 @@ class Step < ApplicationRecord
   validates :sended, presence: true
   validates :days_number, presence: true
   validates :rank, presence: true
+  validates :proceeding_id, presence: true
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_133322) do
+ActiveRecord::Schema.define(version: 2019_03_08_132223) do
 
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -95,12 +95,13 @@ ActiveRecord::Schema.define(version: 2019_03_07_133322) do
   end
 
   create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "stepType"
     t.string "name"
     t.string "description"
     t.string "sended"
+    t.integer "stepType"
     t.integer "days_number"
     t.integer "rank"
+    t.integer "proceeding_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
